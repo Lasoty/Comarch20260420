@@ -11,10 +11,12 @@
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
     <PackageReference Include="MediatR" Version="14.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.6" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FleetSharing.Shared\FleetSharing.Shared.csproj" />
+    <ProjectReference Include="..\Modules\FleetSharing.Modules.Fleet\FleetSharing.Modules.Fleet.csproj" />
   </ItemGroup>
 
 </Project>
