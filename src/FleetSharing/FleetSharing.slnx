@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/Modules/" />
+  <Project Path="FleetSharing.Shared/FleetSharing.Shared.csproj" />
+  <Project Path="FleetSharing/FleetSharing.Api.csproj" />
+</Solution>
