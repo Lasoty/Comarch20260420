@@ -1,9 +1,0 @@
-<Solution>
-  <Folder Name="/Modules/">
-    <Project Path="Modules/FleetSharing.Modules.Fleet/FleetSharing.Modules.Fleet.csproj" />
-    <Project Path="Modules/FleetSharing.Modules.Notifications/FleetSharing.Modules.Notifications.csproj" />
-    <Project Path="Modules/FleetSharing.Modules.Reservations/FleetSharing.Modules.Reservations.csproj" />
-  </Folder>
-  <Project Path="FleetSharing.Shared/FleetSharing.Shared.csproj" />
-  <Project Path="FleetSharing/FleetSharing.Api.csproj" />
-</Solution>

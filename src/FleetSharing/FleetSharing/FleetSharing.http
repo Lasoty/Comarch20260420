@@ -1,6 +1,0 @@
-@FleetSharing_HostAddress = http://localhost:5062
-
-GET {{FleetSharing_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
