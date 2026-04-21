@@ -1,4 +1,8 @@
 <Solution>
+  <Folder Name="/doc/">
+    <File Path="doc/Skrypt_Dzien_1.pdf" />
+    <File Path="doc/Skrypt_Dzien_2.pdf" />
+  </Folder>
   <Folder Name="/src/">
     <Project Path="src/CarSharing.Api/CarSharing.Api.csproj" />
     <Project Path="src/CarSharing.BuildingBlocks/CarSharing.BuildingBlocks.csproj" />
