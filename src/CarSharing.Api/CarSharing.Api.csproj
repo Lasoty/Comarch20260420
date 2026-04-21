@@ -19,6 +19,7 @@
     <ProjectReference Include="..\Modules\CarSharing.Modules.Fleet\CarSharing.Modules.Fleet.csproj" />
     <ProjectReference Include="..\Modules\CarSharing.Modules.Reservations\CarSharing.Modules.Reservations.csproj" />
     <ProjectReference Include="..\Modules\CarSharing.Modules.Notifications\CarSharing.Modules.Notifications.csproj" />
+    <ProjectReference Include="..\Modules\CarSharing.Modules.Payments\CarSharing.Modules.Payments.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,13 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\CarSharing.BuildingBlocks\CarSharing.BuildingBlocks.csproj" />
-    <ProjectReference Include="..\CarSharing.Modules.Fleet\CarSharing.Modules.Fleet.csproj" />
-    <ProjectReference Include="..\CarSharing.Modules.Payments\CarSharing.Modules.Payments.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -23,4 +23,17 @@ public sealed class FleetModuleApiService(FleetDbContext dbContext) : IFleetModu
         car.MarkUnavailable();
         await dbContext.SaveChangesAsync(cancellationToken);
     }
+
+    public async Task MarkCarAvailableAsync(Guid carId, CancellationToken cancellationToken = default)
+    {
+        var car = await dbContext.Cars.SingleOrDefaultAsync(x => x.Id == carId, cancellationToken);
+
+        if (car is null)
+        {
+            throw new InvalidOperationException("Car not found.");
+        }
+
+        car.MarkAvailable();
+        await dbContext.SaveChangesAsync(cancellationToken);
+    }
 }

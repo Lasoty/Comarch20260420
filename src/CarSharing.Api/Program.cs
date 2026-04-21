@@ -5,6 +5,8 @@ using CarSharing.Modules.Fleet;
 using CarSharing.Modules.Fleet.Infrastructure;
 using CarSharing.Modules.Notifications;
 using CarSharing.Modules.Notifications.Infrastructure;
+using CarSharing.Modules.Payments;
+using CarSharing.Modules.Payments.Infrastructure;
 using CarSharing.Modules.Reservations;
 using CarSharing.Modules.Reservations.Infrastructure;
 using FluentValidation;
@@ -28,7 +30,8 @@ builder.Services.AddMediatR(cfg =>
         typeof(Program).Assembly,
         typeof(FleetModule).Assembly,
         typeof(ReservationsModule).Assembly,
-        typeof(NotificationsModule).Assembly);
+        typeof(NotificationsModule).Assembly,
+        typeof(PaymentsModule).Assembly);
 });
 
 builder.Services.AddValidatorsFromAssemblyContaining<
@@ -37,6 +40,9 @@ builder.Services.AddValidatorsFromAssemblyContaining<
 builder.Services.AddValidatorsFromAssemblyContaining<
     CarSharing.Modules.Reservations.Application.CreateReservation.CreateReservationCommandValidator>();
 
+builder.Services.AddValidatorsFromAssemblyContaining<
+    CarSharing.Modules.Reservations.Application.StartReservationSaga.StartReservationSagaCommandValidator>();
+
 builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
@@ -44,6 +50,7 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
     containerBuilder.RegisterModule(new FleetModule(builder.Configuration));
     containerBuilder.RegisterModule(new ReservationsModule(builder.Configuration));
     containerBuilder.RegisterModule(new NotificationsModule(builder.Configuration));
+    containerBuilder.RegisterModule(new PaymentsModule(builder.Configuration));
 });
 
 var app = builder.Build();
@@ -58,6 +65,7 @@ using (var scope = app.Services.CreateScope())
     scope.ServiceProvider.GetRequiredService<FleetDbContext>().Database.EnsureCreated();
     scope.ServiceProvider.GetRequiredService<ReservationsDbContext>().Database.EnsureCreated();
     scope.ServiceProvider.GetRequiredService<NotificationsDbContext>().Database.EnsureCreated();
+    scope.ServiceProvider.GetRequiredService<PaymentsDbContext>().Database.EnsureCreated();
 }
 
 app.Run();

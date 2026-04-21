@@ -18,6 +18,33 @@ public sealed class Reservation
         UserId = userId;
         FromUtc = fromUtc;
         ToUtc = toUtc;
-        Status = "Confirmed";
+        Status = ReservationStatuses.Pending;
     }
+
+    public void Confirm()
+    {
+        if (Status != ReservationStatuses.Pending)
+        {
+            throw new InvalidOperationException("Only pending reservation can be confirmed.");
+        }
+
+        Status = ReservationStatuses.Confirmed;
+    }
+
+    public void Reject()
+    {
+        if (Status != ReservationStatuses.Pending)
+        {
+            throw new InvalidOperationException("Only pending reservation can be rejected.");
+        }
+
+        Status = ReservationStatuses.Rejected;
+    }
+}
+
+public static class ReservationStatuses
+{
+    public const string Pending = "Pending";
+    public const string Confirmed = "Confirmed";
+    public const string Rejected = "Rejected";
 }

@@ -6,6 +6,7 @@
   <Folder Name="/src/Modules/">
     <Project Path="src/Modules/CarSharing.Modules.Fleet/CarSharing.Modules.Fleet.csproj" />
     <Project Path="src/Modules/CarSharing.Modules.Notifications/CarSharing.Modules.Notifications.csproj" />
+    <Project Path="src/Modules/CarSharing.Modules.Payments/CarSharing.Modules.Payments.csproj" />
     <Project Path="src/Modules/CarSharing.Modules.Reservations/CarSharing.Modules.Reservations.csproj" />
   </Folder>
 </Solution>
